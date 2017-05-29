@@ -30,7 +30,7 @@ def login_required(test):
 	@wraps(test)
 	def wrap(*args, **kwargs):
 		if 'logged_in' in session:
-			return test(*agrs, **kwargs)
+			return test(*args, **kwargs)
 		else:
 			flash('You need to login first.')
 			return redirect(url_for('login'))
@@ -81,7 +81,7 @@ def tasks():
 	]
 	g.db.close()
 	return render_template(
-		'task.html',
+		'tasks.html',
 		form=AddTaskForm(request.form),
 		open_tasks=open_tasks,
 		closed_tasks=closed_tasks
@@ -100,7 +100,7 @@ def new_task():
 		flash("All fields are required. Please try again.")
 		return redirect(url_for('tasks'))
 	else:
-		g.db.execute('insert into tasks (name, due_date, priority, statue) \
+		g.db.execute('insert into tasks (name, due_date, priority, status) \
 			values (?, ?, ?, 1)', [
 				request.form['name'],
 				request.form['due_date'],
