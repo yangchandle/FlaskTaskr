@@ -65,10 +65,11 @@ def closed_tasks():
 
 
 @app.route('/logout/')
+@login_required
 def logout():
 	session.pop('logged_in', None)
 	session.pop('user_id', None)
-	flash('Goodbye')
+	flash('Goodbye!')
 	return redirect(url_for('login'))
 
 
