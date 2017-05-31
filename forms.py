@@ -4,7 +4,7 @@
 from flask_wtf import Form 
 from wtforms import StringField, DateField, IntegerField,\
 	SelectField, PasswordField
-from wtforms.validators import DataRequired, length, EqualTo
+from wtforms.validators import DataRequired, length, EqualTo, Email
 
 
 class AddTaskForm(Form):
