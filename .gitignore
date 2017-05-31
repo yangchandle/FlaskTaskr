@@ -1,0 +1,8 @@
+env
+venv
+*.pyc
+__pycache__
+*.DS_Store
+FlaskTaskr/called_config.py
+.coverage
+htmlcov
