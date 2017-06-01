@@ -20,7 +20,7 @@ from flask_sqlalchemy import SQLAlchemy
 ################
 
 app = Flask(__name__)
-app.config.from_object('called_config')
+app.config.from_object('_config')
 db = SQLAlchemy(app)
 
 from models import Task, User
@@ -68,8 +68,9 @@ def logout():
     session.pop('logged_in', None)
     session.pop('user_id', None)
     session.pop('role', None)
+    #session.pop('name', None)
     flash('Goodbye!')
-    return redirect(url_for('login'))
+    return redirect(url_for('users.login'))
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -83,6 +84,7 @@ def login():
                 session['logged_in'] = True
                 session['user_id'] = user.id
                 session['role'] = user.role
+                #session['name'] = user.name
                 flash('Welcome!')
                 return redirect(url_for('tasks'))
             else:
