@@ -2,7 +2,7 @@
 
 
 from views import db
-from called_config import DATABASE_PATH
+from _config import DATABASE_PATH
 
 import sqlite3
 from datetime import datetime
