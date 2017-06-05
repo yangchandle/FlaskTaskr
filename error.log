@@ -2,3 +2,4 @@
 404 error at 04-06-2017 22:48:54: http://localhost:5000/does_not_exist
 404 error at 04-06-2017 22:49:00: http://localhost:5000/does_not_exist
 500 error at 04-06-2017 22:51:00: http://localhost:5000/
+404 error at 05-06-2017 20:08:11: http://localhost/this-route-does-not-exist/
