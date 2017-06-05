@@ -66,7 +66,7 @@ class MainTests(unittest.TestCase):
 		)
 		db.session.add(bad_user)
 		db.session.commit()
-		response = self.login('Jeremy', 'django')
+		
 		self.assertRaises(ValueError, self.login, 'Jeremy', 'django')
 		try:
 			response = self.login('Jeremy', 'django')

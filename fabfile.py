@@ -19,10 +19,10 @@ def commit():
 
 
 def push():
-	local("git push origin master")
+	local("git push master origin")
 
 def heroku():
-	local("git push heroku master")
+	local("git push heroku origin")
 
 def heroku_test():
 	local("heroku run nosetests -v")
